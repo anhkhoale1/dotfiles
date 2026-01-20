@@ -1,21 +1,10 @@
 return {
-  "nvim-treesitter/nvim-treesitter",
-  event = { "BufReadPre", "BufNewFile" },
-  build = ":TSUpdate",
-  config = function()
-    -- import nvim-treesitter plugin
-    local treesitter = require("nvim-treesitter")
-
-    -- configure treesitter
-    treesitter.setup({
-      auto_install = true,
-      -- enable syntax highlighting
-      highlight = { enable = true },
-      -- autotag
-      autotag = { enable = true },
-      -- enable indentation
-      indent = { enable = true },
-      -- ensure these language parsers are installed
+  {
+    "nvim-treesitter/nvim-treesitter",
+    branch = "master", -- updated branch specification
+    build = ":TSUpdate",
+    main = "nvim-treesitter.configs", -- use this module for opts
+    opts = {
       ensure_installed = {
         "json",
         "javascript",
@@ -34,9 +23,14 @@ return {
         "query",
         "vimdoc",
       },
-    })
-
-    -- use bash parser for zsh files
-    vim.treesitter.language.register("bash", "zsh")
-  end,
+      auto_install = true, -- auto-install missing parsers
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false, -- set to false for performance
+      },
+      indent = { enable = true },
+      autotag = { enable = true },
+    },
+  },
 }
+
