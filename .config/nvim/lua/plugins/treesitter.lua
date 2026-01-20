@@ -1,12 +1,11 @@
 return {
   {
-    'nvim-treesitter/nvim-treesitter',
+    "nvim-treesitter/nvim-treesitter",
     lazy = false,
-    branch = 'main',
+    branch = "main",
     build = ":TSUpdate",
     init = function()
-      -- list of parsers to install
-      local parser_installed = {
+      local parsers = {
         "json",
         "javascript",
         "typescript",
@@ -25,27 +24,20 @@ return {
         "vimdoc",
       }
 
-      -- install parsers after startup
       vim.defer_fn(function()
-        require("nvim-treesitter.install").ensure_installed(parser_installed)
+        require("nvim-treesitter.install").ensure_installed(parsers)
       end, 1000)
-
-      require("nvim-treesitter.install").update()
-
-      -- auto-start highlights & indentation
-      vim.api.nvim_create_autocmd("FileType", {
-        desc = "User: enable treesitter highlighting",
-        callback = function(ctx)
-          local hasStarted = pcall(vim.treesitter.start) -- safely start treesitter
-
-          -- indent expr if treesitter started
-          local noIndent = {}
-          if hasStarted and not vim.tbl_contains(noIndent, ctx.match) then
-            vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-          end
-        end,
+    end,
+    config = function()
+      require("nvim-treesitter.configs").setup({
+        highlight = {
+          enable = true,
+        },
+        indent = {
+          enable = true,
+          -- JSX/TSX works correctly here in 0.11
+        },
       })
     end,
-  }
+  },
 }
-

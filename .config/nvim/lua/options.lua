@@ -9,7 +9,7 @@ opt.scrolloff = 3
 opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
-
+opt.autoindent = true
 opt.smartindent = true
 opt.wrap = false
 
