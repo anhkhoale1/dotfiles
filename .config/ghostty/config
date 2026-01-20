@@ -1,0 +1,37 @@
+term = xterm-256color
+
+# Theme
+theme = GitHub Dark
+
+# Font settings
+font-family = JetBrainsMono Nerd Font
+font-style = medium
+font-size = 18
+
+# Cursor style - updated for hollow red box
+cursor-style = block
+cursor-style-blink = true
+
+# presse-papiers
+copy-on-select = clipboard
+clipboard-trim-trailing-spaces = true
+
+# Window appearance
+window-decoration = true
+window-padding-balance = true
+background-opacity = 0.95
+background-blur-radius = 15
+window-width = 110
+window-height = 30
+
+# macOS-specific appearance
+macos-titlebar-style = tabs
+macos-titlebar-proxy-icon = hidden
+macos-option-as-alt = true
+
+# Shell integration (use your shell here, e.g., zsh or bash)
+shell-integration = zsh
+shell-integration-features = "adjust_selection,copy_paste,auto_title"
+
+# Keyboard shortcuts
+keybind = cmd+r=reload_config
