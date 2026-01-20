@@ -13,5 +13,8 @@ g() {
   open -a "Google Chrome" "https://www.google.com/search?q=$(printf '%s' "$*" | sed 's/ /+/g')"
 }
 
+# git dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
