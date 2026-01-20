@@ -2,8 +2,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-ZSH_THEME=amuse
+export ZSH="$HOME/.oh-my-zsh"
 source ~/powerlevel10k/powerlevel10k.zsh-theme
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -12,6 +13,19 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 g() {
   open -a "Google Chrome" "https://www.google.com/search?q=$(printf '%s' "$*" | sed 's/ /+/g')"
 }
+
+# nvim alias
+alias n='nvim'
+
+# tmux aliases
+alias t='tmux'
+alias ta='tmux attach'
+alias tas='tmux attach -t'
+alias tls='tmux list-sessions'
+alias tk='tmux kill-session -t'
+alias ts='tmux new-session -A -s'
+alias td='tmux detach'
+alias tx='tmux kill-session'
 
 # git dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'

@@ -1,0 +1,27 @@
+[env]
+TERM = "xterm-256color"
+option_as_alt = "Both"
+
+[window]
+decorations = "buttonless"
+dimensions = { columns = 120, lines = 40 }
+padding = { x = 15, y = 15 }
+opacity = 0.8
+blur = true
+
+[font]
+normal.family = "FiraCode Nerd Font Mono"
+bold.family = "FiraCode Nerd Font Mono"
+italic.family = "FiraCode Nerd Font Mono"
+bold_italic.family = "FiraCode Nerd Font Mono"
+size = 14.0
+
+[cursor]
+  
+[cursor.style]
+shape = "Underline"
+blinking = "On"
+
+[general]
+import = ["/home/username/.config/alacritty/catppuccin-mocha.toml"]
+
