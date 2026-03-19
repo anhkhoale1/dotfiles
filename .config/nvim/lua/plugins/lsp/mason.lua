@@ -3,7 +3,6 @@ return {
   opts = {
     ensure_installed = {
       -- Frontend
-      "ts_ls",           -- TypeScript / JavaScript
       "html",            -- HTML
       "cssls",           -- CSS
       "tailwindcss",     -- TailwindCSS
@@ -15,6 +14,8 @@ return {
       "dockerls",        -- Dockerfiles
       -- Optional: frameworks / tools
       "eslint",          -- JavaScript / TypeScript linting
+      "vue_ls",
+      "vtsls"
     },
   },
   dependencies = {

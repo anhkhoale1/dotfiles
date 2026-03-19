@@ -6,9 +6,15 @@ return {
     "nvim-tree/nvim-web-devicons",
   },
   config = function()
+    local actions = require("telescope.actions")
     require('telescope').setup {
       defaults = {
         winblend = 20,
+        mappings = {
+          n = {
+            ["dd"] = actions.delete_buffer;
+          }
+        }
       },
       pickers = {
         find_files = {

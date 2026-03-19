@@ -4,14 +4,15 @@ local opt = vim.opt
 
 opt.number = true
 opt.relativenumber = true
-opt.scrolloff = 3 
+opt.scrolloff = 3
 
 opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
 opt.autoindent = true
 opt.smartindent = true
-opt.wrap = false
+opt.laststatus = 3
+opt.cmdheight = 0
 
 -- search settings
 opt.ignorecase = true -- ignore case when searching

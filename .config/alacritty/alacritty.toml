@@ -5,7 +5,6 @@ option_as_alt = "Both"
 [window]
 decorations = "buttonless"
 dimensions = { columns = 120, lines = 40 }
-padding = { x = 15, y = 15 }
 opacity = 0.8
 blur = true
 
